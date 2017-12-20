@@ -2,7 +2,8 @@ doctype html
 html
   head
     title= settings.title
-    link(rel='stylesheet', href='/themes/#{settings.theme}/bootstrap.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans:400,700')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/vendor/jqplot/jquery.jqplot.css')
     link(rel='stylesheet', href='//cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.css')
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
@@ -93,7 +94,7 @@ html
           ul.nav.navbar-nav
             li#home
               a.navbar-link(href='/') 
-                span.glyphicon.glyphicon-search
+                span.fa.fa-search
                 span.menu-text #{settings.locale.menu_explorer}
             if settings.heavy == true
               li#reward
@@ -103,7 +104,7 @@ html
             if settings.display.movement == true
               li#movement 
                 a.navbar-link.loading(href='/movement') 
-                  span.fa.fa-money
+                  span.fa.fa-usd
                   span.menu-text #{settings.locale.menu_movement}
             if settings.display.network == true
               li#network
@@ -113,7 +114,7 @@ html
             if settings.display.richlist == true
               li#richlist
                 a.navbar-link(href='/richlist')
-                  span.fa.fa-btc
+                  span.fa.fa-trophy
                   span.menu-text #{settings.locale.menu_richlist}
             if settings.display.markets == true
               li#markets
@@ -123,7 +124,7 @@ html
             if settings.display.api == true
               li#info
                 a.navbar-link(href='/info')
-                  span.glyphicon.glyphicon-info-sign
+                  span.fa.fa-info-circle
                   span.menu-text #{settings.locale.menu_api}
     .col-md-12
       .row.text-center
@@ -189,7 +190,7 @@ html
         form.form-inline(method='post', action='/search')      
           #index-search.form-group
             input.form-control(type='text', name='search', placeholder='#{settings.locale.ex_search_message}', style='min-width:80%;margin-right:5px;')
-            button.btn.btn-success(type='submit') #{settings.locale.ex_search_button}
+            button.btn.btn-primary(type='submit') #{settings.locale.ex_search_button}
     block content
     .navbar.navbar-default.navbar-fixed-bottom.hidden-xs
       .col-md-4
